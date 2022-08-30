@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Customize the Clustered Markers */
+.marker-logo {
+  /* background: #9370db;
+  border: 3px solid #ededed;
+  border-radius: 50%;
+  color: #ededed; */
+  height: 32px;
+  /* line-height: 37px;
+  text-align: center; */
+  width: 24px;
+  background-image: url('/marker-logo.png');
+  background-size: cover;
+}
