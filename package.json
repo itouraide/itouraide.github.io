@@ -1,5 +1,5 @@
 {
-  "name": "e-travel-h5",
+  "name": "e-travel-landing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "next start -p 3301",
     "lint": "next lint",
     "prepare": "husky install",
-    "prod": "next build && pm2 start yarn --name 'e-travel-h5' --interpreter bash -- start"
+    "prod": "next build && pm2 start yarn --name 'e-travel-landing' --interpreter bash -- start"
   },
   "dependencies": {
     "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
