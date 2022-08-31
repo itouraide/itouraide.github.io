@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import Transition from '../utils/Transition'
+import Transition from './Transition'
 
-function Modal({ children, id, ariaLabel, show, handleClose }) {
+function Modal({ children, id, ariaLabel, show, handleClose }: any) {
   const modalContent = useRef(null)
 
   // close the modal on click outside
   useEffect(() => {
-    const clickHandler = ({ target }) => {
-      if (!show || modalContent.current.contains(target)) return
+    const clickHandler = ({ target }: any) => {
+      if (!show || (modalContent.current as any).contains(target)) return
       handleClose()
     }
     document.addEventListener('click', clickHandler)
@@ -17,7 +17,7 @@ function Modal({ children, id, ariaLabel, show, handleClose }) {
 
   // close the modal if the esc key is pressed
   useEffect(() => {
-    const keyHandler = ({ keyCode }) => {
+    const keyHandler = ({ keyCode }: any) => {
       if (keyCode !== 27) return
       handleClose()
     }
@@ -30,6 +30,7 @@ function Modal({ children, id, ariaLabel, show, handleClose }) {
     <>
       {/* Modal backdrop */}
       <Transition
+        appear
         className="fixed inset-0 z-50 bg-white bg-opacity-75 transition-opacity backdrop-blur-sm"
         show={show}
         enter="transition ease-out duration-200"
@@ -43,6 +44,7 @@ function Modal({ children, id, ariaLabel, show, handleClose }) {
 
       {/* Modal dialog */}
       <Transition
+        appear
         id={id}
         className="fixed inset-0 z-50 overflow-hidden flex items-center justify-center transform px-4 sm:px-6"
         role="dialog"

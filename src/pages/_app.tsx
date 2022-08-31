@@ -7,7 +7,7 @@ import 'styles/style.css'
 
 import AOS from 'aos'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: any) {
   const router = useRouter()
 
   useEffect(() => {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Transition from '../utils/Transition'
+import Transition from './Transition'
 
-function Dropdown({ children, title }) {
+function Dropdown({ children, title }: any) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   return (
@@ -29,6 +29,7 @@ function Dropdown({ children, title }) {
         </svg>
       </a>
       <Transition
+        appear={true}
         show={dropdownOpen}
         tag="ul"
         className="origin-top-right absolute top-full right-0 w-40 bg-white py-2 ml-4 rounded shadow-lg"

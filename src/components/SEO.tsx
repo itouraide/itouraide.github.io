@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
 export const SEO = ({
-  description = '电子导游',
-  keywords = '电子导游',
-  title = '电子导游',
+  description = 'iTourAide',
+  keywords = 'iTourAide',
+  title = 'iTourAide',
 }) => {
   return (
     <Head>

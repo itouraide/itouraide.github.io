@@ -8,9 +8,9 @@ function Features() {
   const tabs = useRef(null)
 
   const heightFix = () => {
-    if (tabs.current.children[tab]) {
-      tabs.current.style.height =
-        tabs.current.children[tab - 1].offsetHeight + 'px'
+    const { current } = tabs as any
+    if (current.children[tab]) {
+      current.style.height = current.children[tab - 1].offsetHeight + 'px'
     }
   }
 

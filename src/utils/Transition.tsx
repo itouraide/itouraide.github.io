@@ -26,20 +26,20 @@ function CSSTransition({
   tag = 'div',
   children,
   ...rest
-}) {
-  const enterClasses = enter.split(' ').filter((s) => s.length)
-  const enterStartClasses = enterStart.split(' ').filter((s) => s.length)
-  const enterEndClasses = enterEnd.split(' ').filter((s) => s.length)
-  const leaveClasses = leave.split(' ').filter((s) => s.length)
-  const leaveStartClasses = leaveStart.split(' ').filter((s) => s.length)
-  const leaveEndClasses = leaveEnd.split(' ').filter((s) => s.length)
+}: any) {
+  const enterClasses = enter.split(' ').filter((s: any) => s.length)
+  const enterStartClasses = enterStart.split(' ').filter((s: any) => s.length)
+  const enterEndClasses = enterEnd.split(' ').filter((s: any) => s.length)
+  const leaveClasses = leave.split(' ').filter((s: any) => s.length)
+  const leaveStartClasses = leaveStart.split(' ').filter((s: any) => s.length)
+  const leaveEndClasses = leaveEnd.split(' ').filter((s: any) => s.length)
   const removeFromDom = unmountOnExit
 
-  function addClasses(node, classes) {
+  function addClasses(node: any, classes: any) {
     classes.length && node.classList.add(...classes)
   }
 
-  function removeClasses(node, classes) {
+  function removeClasses(node: any, classes: any) {
     classes.length && node.classList.remove(...classes)
   }
 
@@ -52,11 +52,11 @@ function CSSTransition({
       nodeRef={nodeRef}
       unmountOnExit={removeFromDom}
       in={show}
-      addEndListener={(done) => {
-        nodeRef.current.addEventListener('transitionend', done, false)
+      addEndListener={(done: any) => {
+        ;(nodeRef.current as any).addEventListener('transitionend', done, false)
       }}
       onEnter={() => {
-        if (!removeFromDom) nodeRef.current.style.display = null
+        if (!removeFromDom) (nodeRef.current as any).style.display = null
         addClasses(nodeRef.current, [...enterClasses, ...enterStartClasses])
       }}
       onEntering={() => {
@@ -75,7 +75,7 @@ function CSSTransition({
       }}
       onExited={() => {
         removeClasses(nodeRef.current, [...leaveEndClasses, ...leaveClasses])
-        if (!removeFromDom) nodeRef.current.style.display = 'none'
+        if (!removeFromDom) (nodeRef.current as any).style.display = 'none'
       }}
     >
       <Component
@@ -89,8 +89,8 @@ function CSSTransition({
   )
 }
 
-function Transition({ show, appear, ...rest }) {
-  const { parent } = useContext(TransitionContext)
+function Transition({ show, appear, ...rest }: any) {
+  const { parent }: any = useContext(TransitionContext)
   const isInitialRender = useIsInitialRender()
   const isChild = show === undefined
 
