@@ -8,21 +8,16 @@ class Document extends NextDocument<Props> {
     return (
       <Html>
         <Head>
-          <link
-            rel="stylesheet"
-            href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-            integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-            crossOrigin=""
+          <meta charSet="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
           />
-          <link
-            rel="stylesheet"
-            href="https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css"
-          />
-
         </Head>
-        <body>
+        <body className="font-inter antialiased bg-white text-gray-900 tracking-tight">
           <Main />
           <NextScript />
+          <script src="/sidebar.js" type="text/javascript" defer />
         </body>
       </Html>
     )
