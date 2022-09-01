@@ -18,7 +18,7 @@ import Newsletter from 'components/Newsletter'
 
 const Home: NextPage = () => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen overflow-hidden">
       <SEO title="iTourAide"></SEO>
 
       {/*  Site header */}
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
 
       {/*  Site footer */}
       <Footer />
-    </>
+    </div>
   )
 }
 

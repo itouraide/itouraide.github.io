@@ -69,7 +69,7 @@ function HeroHome() {
                     href="#0"
                   >
                     <AiFillAndroid className="w-6 h-6 mr-1" />
-                    安卓版
+                    Android版
                   </a>
                 </div>
                 <div>
@@ -78,7 +78,7 @@ function HeroHome() {
                     href="#0"
                   >
                     <AiFillApple className="w-6 h-6 mr-1" />
-                    iOS版本
+                    iOS版
                   </a>
                 </div>
               </div>
